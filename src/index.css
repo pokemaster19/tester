@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  /* Убрали transition для всего документа */
+}
+
+.dark {
+  color: #ffffff;
+}
+
+@layer base {
+  :root {
+    --background: #f9fafb;
+    --foreground: #1f2937;
+  }
+
+  .dark {
+    --background: #111827;
+    --foreground: #f9fafb;
+  }
+
+  header {
+    @apply flex-shrink-0;
+  }
+
+  button[aria-label] {
+    @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  }
+
+  /* Стили для range input */
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 bg-indigo-600 rounded-full cursor-pointer;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    @apply appearance-none w-4 h-4 bg-indigo-600 rounded-full cursor-pointer;
+  }
+
+  /* Применяем цвет с !important */
+  .nav-button {
+    color: #1f2937 !important; /* gray-900 */
+  }
+
+  .dark .nav-button {
+    color: #e5e7eb !important; /* gray-200 */
+  }
+
+  .nav-button .nav-icon {
+    color: #1f2937 !important; /* gray-900 */
+  }
+
+  .dark .nav-button .nav-icon {
+    color: #e5e7eb !important; /* gray-200 */
+  }
+}
+
+.error {
+  background-color: red;
+  color: white;
+  border-bottom: 2px solid red;
+  cursor: pointer;
+}
+
+.error:hover {
+  background-color: darkred; /* При наведении на ошибку, она будет темнее */
+}
+
+
